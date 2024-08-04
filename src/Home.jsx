@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Create from './Create';
 import axios from 'axios';
-import { BsCircleFill, BsFillTrashFill, BsFillCheckCircleFill } from 'react-icons/bs';
 
 
 
@@ -42,10 +41,10 @@ function Home() {
                     : todos.map((todo, index) => (
                         <div className='task' key={index}>
                             <div className='checkbox' onClick={() => handleEdit(todo._id, todo.done)}>
-                                {todo.done ? <BsFillCheckCircleFill className="icon" /> : <BsCircleFill className='icon' />}
+                                {todo.done}
                                 <p className={todo.done ? "line_through" : ""}>{todo.task}</p>
                             </div>
-                            <span onClick={() => handleDelete(todo._id)}><BsFillTrashFill className='icon' /></span>
+                            <span onClick={() => handleDelete(todo._id)}><input type='button' /></span>
                         </div>
                     ))
             }
